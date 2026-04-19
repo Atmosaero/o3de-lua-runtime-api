@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.3
+
+- Added the extension marketplace icon.
+
 ## 0.0.1
 
 - Initial experimental VS Code extension for generating LuaLS stubs from a running O3DE Editor.
