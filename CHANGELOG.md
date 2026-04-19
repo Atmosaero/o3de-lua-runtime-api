@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.4
+
+- Allowed `o3deLua.stubOutputPath` to point to either a Lua file or a directory.
+
 ## 0.0.3
 
 - Added the extension marketplace icon.

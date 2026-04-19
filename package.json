@@ -2,7 +2,7 @@
   "name": "o3de-lua-runtime-api",
   "displayName": "O3DE Lua Runtime API",
   "description": "Generates LuaLS stubs from O3DE runtime-reflected Lua APIs.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publisher": "Atmosaero",
   "icon": "assets/icon.png",
   "license": "MIT",
@@ -41,7 +41,7 @@
         "o3deLua.stubOutputPath": {
           "type": "string",
           "default": "",
-          "description": "Optional workspace-relative or absolute path for generated LuaLS stubs. Leave empty to store stubs in VS Code extension global storage so O3DE Asset Processor does not scan them."
+          "description": "Optional workspace-relative or absolute file or directory path for generated LuaLS stubs. Directory paths write o3de-lua-api.lua inside that directory. Leave empty to store stubs in VS Code extension global storage so O3DE Asset Processor does not scan them."
         },
         "o3deLua.updateLuaWorkspaceLibrary": {
           "type": "boolean",

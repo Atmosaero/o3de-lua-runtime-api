@@ -247,7 +247,7 @@ function resolveGeneratedStubPath(
 ): string {
   const configuredPath = config.get<string>("stubOutputPath")?.trim() ?? "";
   if (configuredPath && normalizeFsPath(configuredPath) !== normalizeFsPath(".vscode/o3de-lua-api.lua")) {
-    return resolveWorkspacePath(configuredPath, workspaceFolder);
+    return resolveConfiguredStubPath(configuredPath, workspaceFolder);
   }
 
   return path.join(
@@ -256,6 +256,15 @@ function resolveGeneratedStubPath(
     `${sanitizePathPart(workspaceFolder.name)}-${hashString(workspaceFolder.uri.fsPath)}`,
     "o3de-lua-api.lua"
   );
+}
+
+function resolveConfiguredStubPath(configuredPath: string, workspaceFolder: vscode.WorkspaceFolder): string {
+  const resolvedPath = resolveWorkspacePath(configuredPath, workspaceFolder);
+  const parsed = path.parse(resolvedPath);
+  if (!parsed.ext || configuredPath.endsWith("/") || configuredPath.endsWith("\\")) {
+    return path.join(resolvedPath, "o3de-lua-api.lua");
+  }
+  return resolvedPath;
 }
 
 function sanitizePathPart(input: string): string {
