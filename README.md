@@ -17,7 +17,7 @@ The status bar item `O3DE Lua API` runs the same command.
 ## Usage
 
 1. Open an O3DE project workspace in VS Code.
-2. Start O3DE Editor
+2. Start O3DE Editor.
 3. Run `O3DE Lua: Refresh API From O3DE Editor`.
 4. Wait for the generated stub summary.
 5. Run `Lua: Restart Language Server` if LuaLS does not pick up the new library immediately.

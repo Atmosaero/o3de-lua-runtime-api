@@ -3,3 +3,8 @@ src
 samples
 tsconfig.json
 *.map
+.github
+.gitignore
+.editorconfig
+.vsix
+out/**/*.map
