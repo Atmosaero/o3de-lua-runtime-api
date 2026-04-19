@@ -3,7 +3,12 @@
   "displayName": "O3DE Lua Runtime API",
   "description": "Generates LuaLS stubs from O3DE runtime-reflected Lua APIs.",
   "version": "0.0.1",
-  "publisher": "local",
+  "publisher": "Atmosaero",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Atmosaero/o3de-lua-runtime-api.git"
+  },
   "engines": {
     "vscode": "^1.88.0"
   },
