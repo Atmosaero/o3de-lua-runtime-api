@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "generatedAt": "2026-04-18T00:00:00.000Z",
+  "source": {
+    "context": "Default",
+    "endpoint": "Editor"
+  },
+  "contexts": [
+    "Default"
+  ],
+  "globals": {
+    "methods": [
+      {
+        "name": "Debug.Log",
+        "dbgParamInfo": "message"
+      }
+    ],
+    "properties": [
+      {
+        "name": "TickRequestBus",
+        "isRead": true,
+        "isWrite": false
+      }
+    ]
+  },
+  "classes": [
+    {
+      "name": "Vector3",
+      "methods": [
+        {
+          "name": "CreateOne",
+          "dbgParamInfo": ""
+        },
+        {
+          "name": "GetLength",
+          "dbgParamInfo": ""
+        }
+      ],
+      "properties": [
+        {
+          "name": "x",
+          "isRead": true,
+          "isWrite": true
+        }
+      ]
+    }
+  ],
+  "ebuses": [
+    {
+      "name": "TransformBus",
+      "canBroadcast": true,
+      "canQueue": false,
+      "hasHandler": false,
+      "events": [
+        {
+          "name": "GetWorldTM",
+          "dbgParamInfo": "entityId",
+          "category": "Event"
+        },
+        {
+          "name": "SetWorldTM",
+          "dbgParamInfo": "entityId, transform",
+          "category": "Event"
+        },
+        {
+          "name": "GetDefaultScale",
+          "dbgParamInfo": "",
+          "category": "Broadcast"
+        }
+      ]
+    },
+    {
+      "name": "MyProjectRequestBus",
+      "canBroadcast": true,
+      "canQueue": true,
+      "hasHandler": true,
+      "events": [
+        {
+          "name": "SpawnSquad",
+          "dbgParamInfo": "spawnPoint, count",
+          "category": "Broadcast"
+        },
+        {
+          "name": "OnSquadSpawned",
+          "dbgParamInfo": "squadId",
+          "category": "Notification"
+        }
+      ]
+    }
+  ]
+}

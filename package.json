@@ -1,0 +1,58 @@
+{
+  "name": "o3de-lua-runtime-api",
+  "displayName": "O3DE Lua Runtime API",
+  "description": "Generates LuaLS stubs from O3DE runtime-reflected Lua APIs.",
+  "version": "0.0.1",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.88.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:lua",
+    "onCommand:o3deLua.refreshApiFromEditor"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "o3deLua.refreshApiFromEditor",
+        "title": "O3DE Lua: Refresh API From O3DE Editor"
+      }
+    ],
+    "configuration": {
+      "title": "O3DE Lua Runtime API",
+      "properties": {
+        "o3deLua.remoteToolsTimeoutMs": {
+          "type": "number",
+          "default": 30000,
+          "minimum": 1000,
+          "description": "Maximum time to wait for the O3DE Editor RemoteTools connection and runtime API responses."
+        },
+        "o3deLua.stubOutputPath": {
+          "type": "string",
+          "default": "",
+          "description": "Optional workspace-relative or absolute path for generated LuaLS stubs. Leave empty to store stubs in VS Code extension global storage so O3DE Asset Processor does not scan them."
+        },
+        "o3deLua.updateLuaWorkspaceLibrary": {
+          "type": "boolean",
+          "default": true,
+          "description": "Add the generated stub folder to Lua.workspace.library when refreshing stubs."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.88.0",
+    "typescript": "^5.4.0"
+  }
+}
